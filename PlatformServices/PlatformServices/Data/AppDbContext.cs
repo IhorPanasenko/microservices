@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PlatformServices.Models;
 
 namespace PlatformServices.Data
 {
@@ -8,6 +9,7 @@ namespace PlatformServices.Data
         {
 
         }
+        public DbSet<Platform> Platfroms { get; set; }
 
     }
 }
