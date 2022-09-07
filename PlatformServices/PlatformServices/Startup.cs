@@ -16,5 +16,27 @@ namespace PlatformServices
 {
     public class Startup
     {
+        public Startup(IConfiguration configuration)
+        {
+
+        }
+        public IConfiguration Configuration { get; }    
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddControllers();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "PlatformService", Version = "v1" });
+            });
+        }
+
+        public void Configure (IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment()) 
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+            }
+        }
     }
 }
