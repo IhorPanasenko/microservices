@@ -53,6 +53,8 @@ namespace PlatformServices
                 endpoints.MapControllers();
             });
 
+            PrepDb.PrepPopulation(app);
+
         }
     }
 }
