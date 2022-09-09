@@ -22,7 +22,8 @@ namespace PlatformServices.Controllers
         public ActionResult<IEnumerable<PlatformReadDto>> GetPlatforms()
         {
             Console.WriteLine("--> Getting PLaforms.......");
-            var platfromItem = _repository.GetPlatforms();
+            var platfromItem = _repository.GetAllPlatforms();
+
         }
     }
 }
