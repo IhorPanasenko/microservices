@@ -23,7 +23,7 @@ namespace PlatformServices.Controllers
         {
             Console.WriteLine("--> Getting PLaforms.......");
             var platfromItem = _repository.GetAllPlatforms();
-
+            return Ok(_mapper.Map<IEnumerable<PlatformReadDto>>(platfromItem));
         }
     }
 }
